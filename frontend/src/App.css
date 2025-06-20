@@ -22,7 +22,7 @@
   margin-bottom: 0.5rem;
   font-weight: 700;
   letter-spacing: 1px;
-  background: linear-gradient(45deg, #3498db, #9b59b6);
+  background: #117ec7;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -185,7 +185,6 @@ input:checked + .toggle-slider:before {
 .text-area:focus {
   outline: none;
   border-color: #3498db;
-  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
 /* Buttons */
