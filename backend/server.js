@@ -18,6 +18,11 @@ app.use("/api", summarizerRoutes);
 app.use('/api', speechRoutes); 
 app.use('/api', translateRoutes);
 
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
