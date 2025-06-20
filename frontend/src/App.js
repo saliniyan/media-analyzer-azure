@@ -28,7 +28,7 @@ export default function App() {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/transcribe?lang=${transcriptionLang}`,
+        `https://media-analyzer-azure.onrender.com/api/transcribe?lang=${transcriptionLang}`,
         formData,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
@@ -48,7 +48,7 @@ export default function App() {
     if (!transcript) return;
     setProcessing(prev => ({ ...prev, summarize: true }));
     try {
-      const res = await axios.post('http://localhost:5000/api/summarize', {
+      const res = await axios.post('https://media-analyzer-azure.onrender.com/api/summarize', {
         text: transcript,
         lang: transcriptionLang.split('-')[0] || 'en'
       });
@@ -66,7 +66,7 @@ export default function App() {
     if (!baseText || !translationLang) return;
     setProcessing(prev => ({ ...prev, translate: true }));
     try {
-      const res = await axios.post('http://localhost:5000/api/translate', {
+      const res = await axios.post('https://media-analyzer-azure.onrender.com/api/translate', {
         text: baseText,
         to: translationLang,
       });
@@ -87,7 +87,7 @@ export default function App() {
     setProcessing(prev => ({ ...prev, speak: true }));
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/speak',
+        'https://media-analyzer-azure.onrender.com/api/speak',
         {
           text: baseText,
           language: translationLang || transcriptionLang.split('-')[0] || 'en',
@@ -107,8 +107,8 @@ export default function App() {
   return (
     <div className="smart-analyzer">
       <header className="app-header">
-        <h1 className="app-title">Smart Media Analyzer</h1>
-        <p className="app-subtitle">Transform audio to insights with AI-powered analysis</p>
+        <h1 className="app-title">Media Analyzer using Azure AI service</h1>
+        <p className="app-subtitle">Transform lecture and lesson audio into a summary in your preferred language, and listen to it with multiple voice using AI-powered insights.</p>
       </header>
 
       <div className="chain-toggle">
@@ -120,7 +120,7 @@ export default function App() {
           />
           <span className="toggle-slider"></span>
         </label>
-        <span>Chain Mode {chainMode ? 'ON' : 'OFF'}</span>
+        <span>Chain Mode {chainMode ? 'ON' : 'OFF'} (Pass output from the previous task to the next)</span>
       </div>
 
       {/* Upload & Transcribe Section */}
@@ -133,7 +133,7 @@ export default function App() {
         <div className="file-input-container">
           <label className="file-input-label">
             {file ? file.name : 'Choose Audio File'}
-            <input 
+            <input
               type="file" 
               className="file-input" 
               accept="audio/*" 
