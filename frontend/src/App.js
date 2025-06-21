@@ -133,7 +133,7 @@ export default function App() {
             Upload a clear audio file (supported format: <strong>.wav</strong>). 
             For example, 
             <a 
-            href="https://github.com/saliniyan/media-analyzer-azure/tree/main/frontend/audio/tamil_cropped.wav" 
+            href="https://github.com/saliniyan/media-analyzer-azure/blob/main/frontend/audio/tamil_croped.wav" 
             target="_blank" 
             rel="noreferrer"
           >
