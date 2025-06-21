@@ -35,6 +35,12 @@
   font-weight: 400;
 }
 
+.app-subtitle-sub {
+  color: #525656;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 /* Toggle Switch */
 .chain-toggle {
   display: flex;

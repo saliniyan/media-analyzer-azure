@@ -128,7 +128,19 @@ export default function App() {
         <div className="section-header">
           <div className="section-number">1</div>
           <h2 className="section-title">Upload & Transcribe</h2>
-        </div>
+          </div>
+          <p className="app-subtitle-sub">
+            Upload a clear audio file (supported format: <strong>.wav</strong>). 
+            For example, 
+            <a 
+            href="https://github.com/saliniyan/media-analyzer-azure/tree/main/frontend/audio/tamil_cropped.wav" 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            sample audio file
+          </a>
+            The uploaded audio will be transcribed to text.
+          </p>
         
         <div className="file-input-container">
           <label className="file-input-label">
@@ -188,7 +200,9 @@ export default function App() {
           value={transcript}
           onChange={(e) => setTranscript(e.target.value)}
         ></textarea>
-        
+         <p className='app-subtitle-sub'>
+          Now click summarize to get summary of the audio
+        </p>
         <button 
           className="action-button"
           onClick={handleSummarize} 
@@ -233,7 +247,9 @@ export default function App() {
           <option value="fr">French</option>
           <option value="en">English</option>
         </select>
-        
+        <p className='app-subtitle-sub'>
+          Now translate the summary into your preferred language.
+        </p>
         <button 
           className="action-button"
           onClick={handleTranslate} 
