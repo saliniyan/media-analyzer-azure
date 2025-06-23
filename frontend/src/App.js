@@ -139,7 +139,9 @@ export default function App() {
           >
             sample audio file
           </a>
+          <br />
             The uploaded audio will be transcribed to text.
+            (Note: The audio will be stored in blob storage)
           </p>
         
         <div className="file-input-container">
